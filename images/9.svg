@@ -1,0 +1,45 @@
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        #shell1 {
+            animation: rotation 10s infinite linear;
+        }
+        #shell2 {
+            animation: rotation 15s infinite linear;
+        }
+
+        @keyframes rotation {
+            from {
+                rotate: 0deg;
+            }
+            to {
+                rotate: 360deg;
+            }
+        }
+    </style>
+    <defs>
+        <circle id="electron" fill="#77868b" stroke="none" cx="0" cy="0" r="15"/>
+    </defs>
+    <g id="center">
+        <circle cx="512" cy="512" r="60" fill="#994628" stroke="#000" stroke-width="5" />
+        <text x="512" y="512" font-size="50" text-anchor="middle" alignment-baseline="central" fill="#fff">F</text>
+    </g>
+    <g id="shells" fill="none" stroke="#77868b" stroke-width="5" transform="translate(512, 512)">
+        <circle id="shell_1" r="130"/>
+        <circle id="shell_2" r="190"/>
+    </g>
+    <g id="electrons" transform="translate(512, 512)">
+        <g id="shell1">
+            <use id="electron1_1" xlink:href="#electron" y="-130" transform="rotate(0.0000)"/>
+            <use id="electron1_2" xlink:href="#electron" y="-130" transform="rotate(180.0000)"/>
+        </g>
+        <g id="shell2">
+            <use id="electron2_1" xlink:href="#electron" y="-190" transform="rotate(0.0000)"/>
+            <use id="electron2_2" xlink:href="#electron" y="-190" transform="rotate(51.4286)"/>
+            <use id="electron2_3" xlink:href="#electron" y="-190" transform="rotate(102.8571)"/>
+            <use id="electron2_4" xlink:href="#electron" y="-190" transform="rotate(154.2857)"/>
+            <use id="electron2_5" xlink:href="#electron" y="-190" transform="rotate(205.7143)"/>
+            <use id="electron2_6" xlink:href="#electron" y="-190" transform="rotate(257.1429)"/>
+            <use id="electron2_7" xlink:href="#electron" y="-190" transform="rotate(308.5714)"/>
+        </g>
+    </g>
+</svg>

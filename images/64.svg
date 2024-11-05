@@ -1,0 +1,124 @@
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        #shell1 {
+            animation: rotation 10s infinite linear;
+        }
+        #shell2 {
+            animation: rotation 15s infinite linear;
+        }
+        #shell3 {
+            animation: rotation 20s infinite linear;
+        }
+        #shell4 {
+            animation: rotation 25s infinite linear;
+        }
+        #shell5 {
+            animation: rotation 30s infinite linear;
+        }
+        #shell6 {
+            animation: rotation 35s infinite linear;
+        }
+
+        @keyframes rotation {
+            from {
+                rotate: 0deg;
+            }
+            to {
+                rotate: 360deg;
+            }
+        }
+    </style>
+    <defs>
+        <circle id="electron" fill="#77868b" stroke="none" cx="0" cy="0" r="15"/>
+    </defs>
+    <g id="center">
+        <circle cx="512" cy="512" r="60" fill="#c55277" stroke="#000" stroke-width="5" />
+        <text x="512" y="512" font-size="50" text-anchor="middle" alignment-baseline="central" fill="#fff">Gd</text>
+    </g>
+    <g id="shells" fill="none" stroke="#77868b" stroke-width="5" transform="translate(512, 512)">
+        <circle id="shell_1" r="130"/>
+        <circle id="shell_2" r="190"/>
+        <circle id="shell_3" r="250"/>
+        <circle id="shell_4" r="310"/>
+        <circle id="shell_5" r="370"/>
+        <circle id="shell_6" r="430"/>
+    </g>
+    <g id="electrons" transform="translate(512, 512)">
+        <g id="shell1">
+            <use id="electron1_1" xlink:href="#electron" y="-130" transform="rotate(0.0000)"/>
+            <use id="electron1_2" xlink:href="#electron" y="-130" transform="rotate(180.0000)"/>
+        </g>
+        <g id="shell2">
+            <use id="electron2_1" xlink:href="#electron" y="-190" transform="rotate(0.0000)"/>
+            <use id="electron2_2" xlink:href="#electron" y="-190" transform="rotate(45.0000)"/>
+            <use id="electron2_3" xlink:href="#electron" y="-190" transform="rotate(90.0000)"/>
+            <use id="electron2_4" xlink:href="#electron" y="-190" transform="rotate(135.0000)"/>
+            <use id="electron2_5" xlink:href="#electron" y="-190" transform="rotate(180.0000)"/>
+            <use id="electron2_6" xlink:href="#electron" y="-190" transform="rotate(225.0000)"/>
+            <use id="electron2_7" xlink:href="#electron" y="-190" transform="rotate(270.0000)"/>
+            <use id="electron2_8" xlink:href="#electron" y="-190" transform="rotate(315.0000)"/>
+        </g>
+        <g id="shell3">
+            <use id="electron3_1" xlink:href="#electron" y="-250" transform="rotate(0.0000)"/>
+            <use id="electron3_2" xlink:href="#electron" y="-250" transform="rotate(20.0000)"/>
+            <use id="electron3_3" xlink:href="#electron" y="-250" transform="rotate(40.0000)"/>
+            <use id="electron3_4" xlink:href="#electron" y="-250" transform="rotate(60.0000)"/>
+            <use id="electron3_5" xlink:href="#electron" y="-250" transform="rotate(80.0000)"/>
+            <use id="electron3_6" xlink:href="#electron" y="-250" transform="rotate(100.0000)"/>
+            <use id="electron3_7" xlink:href="#electron" y="-250" transform="rotate(120.0000)"/>
+            <use id="electron3_8" xlink:href="#electron" y="-250" transform="rotate(140.0000)"/>
+            <use id="electron3_9" xlink:href="#electron" y="-250" transform="rotate(160.0000)"/>
+            <use id="electron3_10" xlink:href="#electron" y="-250" transform="rotate(180.0000)"/>
+            <use id="electron3_11" xlink:href="#electron" y="-250" transform="rotate(200.0000)"/>
+            <use id="electron3_12" xlink:href="#electron" y="-250" transform="rotate(220.0000)"/>
+            <use id="electron3_13" xlink:href="#electron" y="-250" transform="rotate(240.0000)"/>
+            <use id="electron3_14" xlink:href="#electron" y="-250" transform="rotate(260.0000)"/>
+            <use id="electron3_15" xlink:href="#electron" y="-250" transform="rotate(280.0000)"/>
+            <use id="electron3_16" xlink:href="#electron" y="-250" transform="rotate(300.0000)"/>
+            <use id="electron3_17" xlink:href="#electron" y="-250" transform="rotate(320.0000)"/>
+            <use id="electron3_18" xlink:href="#electron" y="-250" transform="rotate(340.0000)"/>
+        </g>
+        <g id="shell4">
+            <use id="electron4_1" xlink:href="#electron" y="-310" transform="rotate(0.0000)"/>
+            <use id="electron4_2" xlink:href="#electron" y="-310" transform="rotate(14.4000)"/>
+            <use id="electron4_3" xlink:href="#electron" y="-310" transform="rotate(28.8000)"/>
+            <use id="electron4_4" xlink:href="#electron" y="-310" transform="rotate(43.2000)"/>
+            <use id="electron4_5" xlink:href="#electron" y="-310" transform="rotate(57.6000)"/>
+            <use id="electron4_6" xlink:href="#electron" y="-310" transform="rotate(72.0000)"/>
+            <use id="electron4_7" xlink:href="#electron" y="-310" transform="rotate(86.4000)"/>
+            <use id="electron4_8" xlink:href="#electron" y="-310" transform="rotate(100.8000)"/>
+            <use id="electron4_9" xlink:href="#electron" y="-310" transform="rotate(115.2000)"/>
+            <use id="electron4_10" xlink:href="#electron" y="-310" transform="rotate(129.6000)"/>
+            <use id="electron4_11" xlink:href="#electron" y="-310" transform="rotate(144.0000)"/>
+            <use id="electron4_12" xlink:href="#electron" y="-310" transform="rotate(158.4000)"/>
+            <use id="electron4_13" xlink:href="#electron" y="-310" transform="rotate(172.8000)"/>
+            <use id="electron4_14" xlink:href="#electron" y="-310" transform="rotate(187.2000)"/>
+            <use id="electron4_15" xlink:href="#electron" y="-310" transform="rotate(201.6000)"/>
+            <use id="electron4_16" xlink:href="#electron" y="-310" transform="rotate(216.0000)"/>
+            <use id="electron4_17" xlink:href="#electron" y="-310" transform="rotate(230.4000)"/>
+            <use id="electron4_18" xlink:href="#electron" y="-310" transform="rotate(244.8000)"/>
+            <use id="electron4_19" xlink:href="#electron" y="-310" transform="rotate(259.2000)"/>
+            <use id="electron4_20" xlink:href="#electron" y="-310" transform="rotate(273.6000)"/>
+            <use id="electron4_21" xlink:href="#electron" y="-310" transform="rotate(288.0000)"/>
+            <use id="electron4_22" xlink:href="#electron" y="-310" transform="rotate(302.4000)"/>
+            <use id="electron4_23" xlink:href="#electron" y="-310" transform="rotate(316.8000)"/>
+            <use id="electron4_24" xlink:href="#electron" y="-310" transform="rotate(331.2000)"/>
+            <use id="electron4_25" xlink:href="#electron" y="-310" transform="rotate(345.6000)"/>
+        </g>
+        <g id="shell5">
+            <use id="electron5_1" xlink:href="#electron" y="-370" transform="rotate(0.0000)"/>
+            <use id="electron5_2" xlink:href="#electron" y="-370" transform="rotate(40.0000)"/>
+            <use id="electron5_3" xlink:href="#electron" y="-370" transform="rotate(80.0000)"/>
+            <use id="electron5_4" xlink:href="#electron" y="-370" transform="rotate(120.0000)"/>
+            <use id="electron5_5" xlink:href="#electron" y="-370" transform="rotate(160.0000)"/>
+            <use id="electron5_6" xlink:href="#electron" y="-370" transform="rotate(200.0000)"/>
+            <use id="electron5_7" xlink:href="#electron" y="-370" transform="rotate(240.0000)"/>
+            <use id="electron5_8" xlink:href="#electron" y="-370" transform="rotate(280.0000)"/>
+            <use id="electron5_9" xlink:href="#electron" y="-370" transform="rotate(320.0000)"/>
+        </g>
+        <g id="shell6">
+            <use id="electron6_1" xlink:href="#electron" y="-430" transform="rotate(0.0000)"/>
+            <use id="electron6_2" xlink:href="#electron" y="-430" transform="rotate(180.0000)"/>
+        </g>
+    </g>
+</svg>

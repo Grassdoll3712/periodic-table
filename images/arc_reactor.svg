@@ -1,0 +1,143 @@
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        :root {
+            --arc: rgb(88, 231, 231);
+        }
+
+        * {
+            transform-origin: 512px 512px;
+        }
+
+        .shadow {
+            filter: drop-shadow(0px 0px 15px rgba(88, 241, 241, 0.5));
+            animation: shadow 2s infinite ease;
+        }
+
+        #outer1 {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 30px;
+        }
+
+        #triangle {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 30px;
+        }
+
+        #middle1 {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 30px;
+            stroke-dasharray: 12.240px 36.720px 110.160px 8.159px 36.720px 110.160px; /* 6 18 54 4 18 54 *8 */
+            animation: anticlockwise 4s infinite linear;
+        }
+
+        #middle2 {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 10px;
+            stroke-dasharray: 8px 25.510px; /* *60 */
+            animation: clockwise 4s infinite linear;
+        }
+
+        #inner1 {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 10px;
+            stroke-dasharray: 87.266px 65.450px 261.799px 109.083px; /* 4 3 12 5 *3 */
+            animation: anticlockwise 3s infinite cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+
+        #inner2 {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 20px;
+            stroke-dasharray: 209.4395px; /* 1 1 *3 */
+            animation: clockwise 3s infinite cubic-bezier(0.47, 0, 0.745, 0.715) -2s;
+        }
+
+        #inner3 {
+            fill: none;
+            stroke: var(--arc);
+            stroke-width: 15px;
+            stroke-dasharray: 23.562px; /* 1 1 *20 */
+            animation: clockwise 2s infinite ease-in-out -1s;
+        }
+
+        #center1 {
+            fill: var(--arc);
+            stroke: none;
+        }
+
+        #center2 {
+            fill: none;
+            stroke: black;
+            stroke-width: 5px;
+            stroke-dasharray: 104.72px 20.944px; /* 5 1 *3 */
+            animation: clockwise 2s infinite linear;
+        }
+
+        #outer {
+            fill: #217aab;
+            stroke: #a2c0d6;
+            stroke-width: 10px;
+        }
+
+        #middle {
+            fill: #0a638b;
+        }
+
+        #inner {
+            fill: #0f5366;
+        }
+
+        #center {
+            fill: #0b465a;
+        }
+
+        @keyframes shadow {
+            0% {
+                filter: drop-shadow(0px 0px 15px rgba(88, 241, 241, 0.8));
+            }
+            50% {
+                filter: drop-shadow(0px 0px 5px rgba(88, 241, 241, 0.1));
+            }
+            100% {
+                filter: drop-shadow(0px 0px 15px rgba(88, 241, 241, 0.8));
+            }
+        }
+
+        @keyframes clockwise {
+            from {
+                rotate: 0deg;
+            }
+            to {
+                rotate: 360deg;
+            }
+        }
+
+        @keyframes anticlockwise {
+            from {
+                rotate: 0deg;
+            }
+            to {
+                rotate: -360deg;
+            }
+        }
+    </style>
+    <circle id="outer" cx="512" cy="512" r="500" />
+    <circle id="middle" cx="512" cy="512" r="400" />
+    <circle id="inner" cx="512" cy="512" r="300" />
+    <circle id="center" cx="512" cy="512" r="190" />
+
+    <circle id="outer1" class="shadow" cx="512" cy="512" r="480" />
+    <path id="triangle" class="shadow" d="M512 970 l-396.640 -687 h793.279Z" />
+    <circle id="middle1" class="shadow" cx="512" cy="512" r="400" />
+    <circle id="middle2" class="shadow" cx="512" cy="512" r="320" />
+    <circle id="inner1" class="shadow" cx="512" cy="512" r="250" />
+    <circle id="inner2" class="shadow" cx="512" cy="512" r="200" />
+    <circle id="inner3" class="shadow" cx="512" cy="512" r="150" />
+    <circle id="center1" class="shadow" cx="512" cy="512" r="90" />
+    <circle id="center2" cx="512" cy="512" r="60" />
+</svg>
