@@ -1,5 +1,8 @@
 let isCtrlPressed;
+let lastClick;
 let midas = false;
+let CuTe = false;
+let isDragging = false;
 
 document.addEventListener("keydown", function (event) {
     if (event.key === "Control") {
@@ -18,6 +21,7 @@ const exceptList = ["lanthanide", "lanthanides", "actinide", "actinides"]
 
 periodicTable.addEventListener("click", function(event) {
     if (event.target.closest(".element")) {
+        // 79: Gold
         if (midas) {
             event.target.closest(".element").classList.add("gold");
         }
@@ -35,8 +39,88 @@ function shuffleArray(array) {
     }
 }
 
+// 26: Iron
+function handleMouseMove(event) {
+    if (!isDragging) return;
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const elements = Array.from(document.querySelectorAll(".element"));
+
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect();
+        const dx = mouseX - (elementPosition.left + elementPosition.width / 2);
+        const dy = mouseY - (elementPosition.top + elementPosition.height / 2);
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < window.innerWidth * 0.15) {
+            const pullStrength = Math.max(0, 1 - distance / (window.innerWidth * 0.15));
+            element.classList.add("magnet");
+            element.style.translate = `${dx * 0.01 * pullStrength}vw ${dy * 0.01 * pullStrength}vw`;
+        } else {
+            element.classList.remove("magnet");
+            element.style.translate = "";
+        }
+    });
+}
+
+// 29-52: CuTe
+function cute() {
+    if (CuTe) {
+        document.querySelector('body > div.head > span.title').innerHTML = '<a href="https://scpko.wikidot.com/gengo" target="_blank">SCP-2300</a>';
+        periodicTable.addEventListener("mouseover", cuteHover);
+        periodicTable.addEventListener("mouseout", cuteOut);
+    } else {
+        document.querySelector('body > div.head > span.title').innerHTML = 'Periodic Table';
+        periodicTable.removeEventListener("mouseover", cuteHover);
+        periodicTable.removeEventListener("mouseout", cuteOut);
+    }
+    const elements = Array.from(document.querySelectorAll(".element"));
+    elements.forEach(element => {
+        id = element.id.slice(7);
+        if (id <= 98) setTimeout(function (id) {
+            if (CuTe) {
+                element.classList.add("CuTe");
+                image = element.querySelector('.back > .image');
+                image.src = `images/2300/${id}.jpeg`;
+                element.classList.add("flipped");
+            } else {
+                element.classList.remove("CuTe");
+                element.classList.remove("flipped");
+            }
+        }, 80*id, id);
+        else if (id <= 118) setTimeout(function () {
+            if (CuTe) element.classList.add("disappear");
+            else element.classList.remove("disappear");
+        }, 80*id);
+        else setTimeout(function () {
+            if (CuTe) element.classList.add("disappear");
+            else element.classList.remove("disappear");
+        }, 80*119);
+    });
+}
+
+function cuteHover(event) {
+    if (event.target.closest(".element")) {
+        if (event.target.closest(".element").id.slice(7) <= 98 && event.target.closest(".element").classList.contains("CuTe")) {
+            document.querySelector('body > div.head > span.title').innerHTML = `<a href="https://scpko.wikidot.com/gengo" target="_blank">SCP-2300-${event.target.closest(".element").id.slice(7)}</a>`;
+        }
+    }
+}
+
+function cuteOut(event) {
+    if (event.target.closest(".element")) {
+        document.querySelector('body > div.head > span.title').innerHTML = '<a href="https://scpko.wikidot.com/gengo" target="_blank">SCP-2300</a>';
+    }
+}
+
 function clickEvent(target, id) {
-    if (!isCtrlPressed) {
+    // 29-52: CuTe
+    if (CuTe) {
+        CuTe = false;
+        cute();
+    }
+    else if (!isCtrlPressed) {
         const image = target.querySelector(".image");
         if (!target.classList.contains("flipped")) {
             image.src = image.dataset.src;
@@ -52,9 +136,10 @@ function clickEvent(target, id) {
                 const elements = Array.from(document.getElementsByClassName("element"))
                 shuffleArray(elements)
                 elements.forEach((element, index) => {
+                    element.classList.remove("flipped");
                     setTimeout(() => {
                         element.classList.add("balloon");
-                    }, 100*Math.sqrt(index));
+                    }, 200*Math.sqrt(index));
                 });
                 setTimeout(() => {
                     document.querySelectorAll(".balloon").forEach((element) => {
@@ -64,7 +149,7 @@ function clickEvent(target, id) {
                             element.classList.remove("appear");
                         }, 3000);
                     });
-                }, 15000);
+                }, 10000);
                 break;
 
             case 6:
@@ -91,19 +176,26 @@ function clickEvent(target, id) {
                 }
                 break;
 
-            case 29:
-                const lightning = document.createElement('div');
-                lightning.classList.add('lightning');
-                document.body.appendChild(lightning);
-                lightning.style.left = `${target.pageX}px`;
-                lightning.style.top = `${target.pageY}px`;
-                setTimeout(() => {
-                    lightning.remove();
-                }, 300);
+            case 26:
+                isDragging = !isDragging;
+                if (!isDragging) {
+                    document.querySelectorAll(".element").forEach(element => {
+                        element.style.translate = "";
+                    });
+                    document.removeEventListener("mousemove", handleMouseMove);
+                } else {
+                    document.addEventListener("mousemove", handleMouseMove);
+                }
+                break;
 
             case 46:
                 target.querySelector(".image").src = "images/arc_reactor.svg";
                 target.classList.add("flipped");
+                break;
+
+            case 52:
+                CuTe = true;
+                if (lastClick == 29) cute();
                 break;
 
             case 79:
@@ -127,6 +219,7 @@ function clickEvent(target, id) {
                 location.href = "./extended.html";
                 break;
         }
+        lastClick = id;
     }
 }
 
